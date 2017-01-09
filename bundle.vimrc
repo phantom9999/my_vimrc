@@ -44,16 +44,47 @@ Bundle 'Shougo/vimshell.vim'
 Bundle 'ctrlp.vim'
 Bundle 'unite.vim'
 Bundle 'bufexplorer.zip'
+Bundle 'dracula/vim'
 
 "let g:ycm_global_ycm_extra_conf = '~/.vim/_ycm_extra_conf.py'   "配置默认的ycm_extra_conf.py
 
 :map <C-l> :split<CR><C-w>w:VimShell<CR>
 
+"=======================
+" cscope setting
+"=======================
+" #!/bin/sh
+" find . -name "*.h" -o -name "*.hpp" -o -name "*.c" -o -name "*.cc" -o -name "*.cpp" > cscope.files
+" cscope -bkq -i cscope.files
+" ctags -R
+
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=1
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    endif
+    set csverb
+endif
+
+nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+
 if has('gui_running')
     autocmd VimEnter * NERDTree
     autocmd VimEnter * Tagbar
-"    color dracula
-"    set guifont=simsun
+    color dracula
+    set guifont=simsun
     :map <C-s> :w<CR> 
 else
     "vim
