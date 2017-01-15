@@ -1,6 +1,7 @@
 "=============================
 "by phantom9999, 常用设置项
 "=============================
+set shell=/bin/sh
 set helplang=cn "设置中文帮助
 set history=500 "保留历史记录
 set tabstop=4 "设置tab的跳数
@@ -65,3 +66,31 @@ set cursorline
 hi CursorLine   cterm=NONE  ctermbg=darkred ctermfg=white
 hi CursorColumn cterm=NONE  ctermbg=darkred ctermfg=white
 
+"=======================
+" cscope setting
+"=======================
+" #!/bin/sh
+" find . -name "*.h" -o -name "*.hpp" -o -name "*.c" -o -name "*.cc" -o -name "*.cpp" > cscope.files
+" cscope -bkq -i cscope.files
+" ctags -R
+
+if has("cscope")
+    set csprg=cscope
+    set csto=1
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    endif
+    set csverb
+endif
+
+nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
