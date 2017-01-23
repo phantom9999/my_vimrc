@@ -1,4 +1,4 @@
-"==========================
+"=========================
 "vundle
 "==========================
 set rtp+=~/.vim/bundle/vundle
@@ -52,13 +52,6 @@ Bundle 'Valloric/YouCompleteMe'
 "配置默认的ycm_extra_conf.py
 let g:ycm_global_ycm_extra_conf = '~/.vim/_ycm_extra_conf.py'
 
-if has('gui_running')
-    let g:ycm_auto_trigger=1
-elseif isLinux==1
-    let g:ycm_auto_trigger=1
-else 
-    let g:ycm_auto_trigger=0
-endif
 
 
 "=======================

@@ -1,28 +1,6 @@
 "=============================
 "by phantom9999, 常用设置项
 "=============================
-
-"=============================
-" 判断操作系统
-"=============================
-let g:isWin=0
-let g:isMac=0
-let g:isLinux=0
-
-if(has("win32") || has("win95") || has("win64") || has("win16"))
-    let g:isWin=1
-elseif(has("unix"))
-    let s:uname = system("uname -s")
-    "string compare in vim use =~
-    if s:uname =~ "Darwin"
-        let g:isMac=1
-    endif
-    if(has("x11"))
-        let g:isLinux=1
-    endif
-endif
-
-
 set shell=/bin/sh
 set helplang=cn "设置中文帮助
 set history=500 "保留历史记录
