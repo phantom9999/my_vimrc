@@ -71,6 +71,7 @@ Bundle 'unite.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'dracula/vim'
 
+
 if has('gui_running')
     autocmd VimEnter * NERDTree
     autocmd VimEnter * Tagbar

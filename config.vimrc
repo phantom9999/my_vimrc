@@ -41,6 +41,7 @@ set showmatch "设置匹配模式，相当于括号匹配
 set smartindent "智能对齐
 set shiftwidth=4 "换行时，交错使用4个空格
 set autoindent "设置自动对齐
+set cindent
 
 "===========================
 "字体、编码设置
@@ -58,6 +59,8 @@ set clipboard=unnamed
 "===========================
 set tags+=./tags;
 
+
+autocmd FileType c,cpp setlocal equalprg=clang-format
 
 "===========================
 "使用行标注
