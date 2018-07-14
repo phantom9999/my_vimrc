@@ -5,3 +5,4 @@
 autoload/
 bundle/
 simsun.ttf.gz
+*.swp
