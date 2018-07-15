@@ -1,8 +1,8 @@
 ":========================
 "vundle
 "==========================
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible      
+filetype off          
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -12,24 +12,22 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'ctrlp.vim'
+"Plugin 'ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'unite.vim'
-Plugin 'bufexplorer.zip'
+"Plugin 'bufexplorer.zip'
 Plugin 'dracula/vim'
-Plugin 'h1mesuke/unite-outline'
-"Plugin 'tsukkee/unite-tag'
-"Plugin 'tsukkee/unite-help'
-"Plugin 'ujihisa/unite-launch'
-"Plugin 'ujihisa/unite-colorscheme'
-"Bundle 'Shougo/denite.nvim'
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plugin 'Shougo/unite-outline'
+Plugin 'tsukkee/unite-tag'
+Plugin 'tsukkee/unite-help'
+Plugin 'ujihisa/unite-launch'
+Plugin 'ujihisa/unite-colorscheme'
+Plugin 'Shougo/denite.nvim'
+Plugin 'altercation/vim-colors-solarized'
+call vundle#end()
+filetype plugin indent on
 
 
-"==========================
-"pathogen
-"==========================
-"call pathogen#infect()
 
 "========================
 "tarbar
@@ -58,7 +56,6 @@ map <F2> :NERDTreeToggle<CR>
 "=======================
 "nerdcommmenter
 "=======================
-
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
@@ -70,9 +67,30 @@ let g:NERDTrimTrailingWhitespace = 1
 "=======================
 "others
 "=======================
-let g:deoplete#enable_at_startup = 1
 
-nnoremap <silent> <F4> :BufExplorer<CR>
+
+if has('python3')
+    silent! python3 1
+" Denite
+"    nnoremap <Leader>b    :Denite buffer<CR>
+"    nnoremap <Leader>f    :Denite outline<CR>
+"    nnoremap <Leader>p    :Denite file_rec<CR>
+"    nnoremap <Leader>t    :Denite tab<CR>
+"    nnoremap <Leader>g    :Denite g<CR>
+" Unite
+    nnoremap <Leader>b    :Unite buffer<CR>
+    nnoremap <Leader>f    :Unite outline<CR>
+    nnoremap <Leader>p    :Unite file_rec<CR>
+    nnoremap <Leader>t    :Unite tab<CR>
+    nnoremap <Leader>g    :Unite g<CR>
+else
+    nnoremap <Leader>b    :Unite buffer<CR>
+    nnoremap <Leader>f    :Unite outline<CR>
+    nnoremap <Leader>p    :Unite file_rec<CR>
+    nnoremap <Leader>t    :Unite tab<CR>
+    nnoremap <Leader>g    :Unite g<CR>
+endif
+
 
 
 if has('gui_running')
