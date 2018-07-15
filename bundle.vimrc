@@ -6,28 +6,31 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-"Bundle 'pathogen.vim'
-Plugin 'Tagbar'
+"Plugin 'pathogen.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'ctrlp.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'unite.vim'
+Plugin 'Shougo/unite.vim'
 "Plugin 'bufexplorer.zip'
 Plugin 'dracula/vim'
 Plugin 'Shougo/unite-outline'
-"Plugin 'tsukkee/unite-tag'
-"Plugin 'tsukkee/unite-help'
-"Plugin 'ujihisa/unite-launch'
-"Plugin 'ujihisa/unite-colorscheme'
+Plugin 'tsukkee/unite-tag'
+Plugin 'tsukkee/unite-help'
+Plugin 'ujihisa/unite-launch'
+Plugin 'ujihisa/unite-colorscheme'
 Plugin 'Shougo/denite.nvim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'mhinz/vim-startify'
+"Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 filetype plugin indent on
 
 
+"execute pathogen#infect()
 
 "========================
 "tarbar
@@ -42,6 +45,7 @@ map <F3> :Tagbar<CR>
 "airline
 "========================
 let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
 
 "=======================
 "NERDTree
@@ -94,10 +98,11 @@ endif
 
 
 if has('gui_running')
-    autocmd VimEnter * NERDTree
-    autocmd VimEnter * Tagbar
+    "autocmd VimEnter * NERDTree
+    "autocmd VimEnter * Tagbar
     color dracula
-    set guifont=simsun
+    "set guifont=simsun
+    "set guifont=DroidSansMono\ Nerd\ Font\ 11
     :map <C-s> :w<CR> 
 else
     "vim

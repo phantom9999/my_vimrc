@@ -6,6 +6,7 @@ set enc=utf-8
 set tenc=utf-8
 set fenc=utf-8
 set fencs=utf-8,usc-bom
+set encoding=utf8
 
 
 
@@ -56,6 +57,8 @@ set cindent
 "===========================
 set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,utf-16,big5
+
+"set encoding=UTF-8
 
 "===========================
 "使y和p直接使用系统剪切板
