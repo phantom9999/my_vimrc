@@ -72,17 +72,17 @@ let g:NERDTrimTrailingWhitespace = 1
 if has('python3')
     silent! python3 1
 " Denite
-"    nnoremap <Leader>b    :Denite buffer<CR>
-"    nnoremap <Leader>f    :Denite outline<CR>
-"    nnoremap <Leader>p    :Denite file_rec<CR>
-"    nnoremap <Leader>t    :Denite tab<CR>
-"    nnoremap <Leader>g    :Denite g<CR>
+    nnoremap <Leader>b    :Denite buffer<CR>
+    nnoremap <Leader>f    :Denite outline<CR>
+    nnoremap <Leader>p    :Denite file_rec<CR>
+    nnoremap <Leader>t    :Denite tab<CR>
+    nnoremap <Leader>g    :Denite g<CR>
 " Unite
-    nnoremap <Leader>b    :Unite buffer<CR>
-    nnoremap <Leader>f    :Unite outline<CR>
-    nnoremap <Leader>p    :Unite file_rec<CR>
-    nnoremap <Leader>t    :Unite tab<CR>
-    nnoremap <Leader>g    :Unite g<CR>
+"    nnoremap <Leader>b    :Unite buffer<CR>
+"    nnoremap <Leader>f    :Unite outline<CR>
+"    nnoremap <Leader>p    :Unite file_rec<CR>
+"    nnoremap <Leader>t    :Unite tab<CR>
+"    nnoremap <Leader>g    :Unite g<CR>
 else
     nnoremap <Leader>b    :Unite buffer<CR>
     nnoremap <Leader>f    :Unite outline<CR>
